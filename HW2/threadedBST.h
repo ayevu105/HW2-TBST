@@ -52,10 +52,10 @@ public:
 
 	// removes specific element
 	// returns true if successful, false if not
-	Node* remove(int value);
+	bool remove(int value);
 
 	// iterator to do inorder traversal of the tree
-	vector<int> inorderTraversal() const;
+	vector<int> preorderTraversal() const;
 
 private:
 

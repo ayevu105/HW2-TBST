@@ -10,6 +10,7 @@ using namespace std;
 // output overload
 ostream& operator<<(ostream& out, const ThreadedBST& bst) {
 
+
 }
 
 // assignment overload for copying
@@ -62,49 +63,101 @@ void ThreadedBST::threadTree(Node* headPtr) {
 	}
 }
 
+/* Helper function that allocates a
+new node */
+Node* newNode(int value)
+{
+	Node* node = (Node*)malloc(sizeof(Node));
+	node->value = value;
+	node->left = node->right = NULL;
+	return (node);
+}
+
 // helper function to build subtrees recursively
 // returns a Node* to make recursion possible
 Node* ThreadedBST::buildSubTree(const vector<int>& nums,
 	int lowerIndex, int upperIndex) {
+	Node *root = nullptr;
+	// Base case for recursion
+	if (lowerIndex < upperIndex)
+	{
+		root = newNode(nums[i]);
+		
+		// insert left child
+		root->left = insertLevelOrder(nums,
+				2 * lowerIndex + 1, upperIndex);
+
+		// insert right child
+		root->right = insertLevelOrder(nums,
+				2 * lowerIndex + 2, upperIndex);
+	}
+	return root;
+
 }
 
 // copy constructor
 ThreadedBST::ThreadedBST(const ThreadedBST& tbst) {
-
+	
 }
-
- 
-
 
 // destructor
 ThreadedBST::~ThreadedBST() {
+	clear(root);
 }
 
 // clear helper function to recursively delete TBST
 void ThreadedBST::clear(Node* node) {
-
+	if (node != nullptr) {
+		clear(node->left);
+		clear(node->right);
+		delete node;
+		return;
+	} else {
+		return;
+	}
 
 }
 
 // searches Tree for a node with specified value
 // returns Node if found, nullptr if not found
 Node* ThreadedBST::getEntry(int n) const {
+	return getEntryHelper(n, root);
+}
+
+Node* ThreadedBST::getEntryHelper(int n, node* ptr) const {
+	if (ptr != nullptr) {
+		if (ptr->value == n) {
+			return ptr;
+		} else {
+			if (n < ptr->value) {
+				return getEntryHelper(n, ptr->left);
+			} else {
+				return getEntryHelper(n, ptr->right);
+			}
+		}
+	} else {
+		return nullptr;
+	}
 
 }
 
 
 // returns true if empty, false if not
 bool ThreadedBST::isEmpty() const {
-	return (headPtr == nullptr);
+	return (root == nullptr);
 }
 
 // iterator to do inorder traversal of the tree
-vector<int> ThreadedBST::inorderTraversal() const {
+vector<int> ThreadedBST::preorderTraversal() const {
+	if (currentNode->right!= nullptr) {
+
+	}
 
 }
 
 //removes a node
-Node* ThreadedBST::remove(int value) {
+bool ThreadedBST::remove(int value) {
+	
 
 }
 
