@@ -52,11 +52,25 @@ public:
 
   Node* getEntry(int n) const;
 
+  int getHeight() const;
+
+  int getNumberOfNodes() const;
+
 private:
 
   Node* root;
 
   int n;
+
+  int height{0};
+
+  int numberOfNodes;
+
+  void preOrderTraversal(Node* node) const;
+
+  void inOrderTraversal(Node* node) const;
+
+  void postOrderTraversal(Node* node) const;
 
   Node* balancedTree(int min, int max);
 
@@ -69,6 +83,9 @@ private:
   bool removeHelper(Node* curr, Node* prev);
 
   Node* getEntryHelper(int n, Node* ptr) const;
+
+  bool isEmpty() const;
+
 };
 
 #endif

@@ -1,4 +1,3 @@
-#include <cassert>
 #include <iostream>
 #include <stack>
 
@@ -7,40 +6,70 @@
 using namespace std;
 
 ostream &operator<<(ostream &out, const ThreadedBST &bst) {
-  Node *prev = bst.root;
-  Node *curr = bst.root;
-  while (curr != nullptr) {
-    while (curr->left != nullptr && !curr->leftThread) {
-      curr = curr->left;
-      prev = curr;
+bst.preOrderTraversal(bst.root);
+return out << "\n";
+}
+
+void ThreadedBST::preOrderTraversal(Node* node) const {
+  if(node == nullptr){
+    return;
+  }
+  cout << node->data;
+  cout << " ";
+    if(!node->leftThread) {
+      preOrderTraversal(node->left);
     }
-    while (
-        curr != nullptr &&
-        (curr->rightThread || curr->left == nullptr ||
-         curr->left->data <= prev->data)) {
-      prev = curr;
-      curr = curr->right;
-      out << prev->data << " ";
+    if(!node->rightThread) {
+      preOrderTraversal(node->right);
     }
   }
-  return out;
+
+void ThreadedBST::inOrderTraversal(Node* node) const {
+  if(node == nullptr){
+    return;
+  }
+
+  if(!node->leftThread) {
+    inOrderTraversal(node->left);
+  }
+  cout << node->data;
+  cout << " ";
+  if(!node->rightThread) {
+    inOrderTraversal(node->right);
+  }
 }
 
+void ThreadedBST::postOrderTraversal(Node* node) const {
+if(node == nullptr){
+  return;
+}
+  if(!node->leftThread) {
+    postOrderTraversal(node->left);
+  }
+  if(!node->rightThread) {
+   postOrderTraversal(node->right);
+  }
+  cout << node->data;
+  cout << " ";
+}
+
+//Constructor
 Node::Node(int data) : data{data} {
-  this->left = nullptr;
-  this->right = nullptr;
-  this->leftThread = false;
-  this->rightThread = false;
+  left = nullptr;
+  right = nullptr;
+  leftThread = false;
+  rightThread = false;
 }
 
+//Constructor w parameter
 ThreadedBST::ThreadedBST(int n) {
-  assert(n > 0);
   this->n = n;
   root = balancedTree(1, n);
   addRightThreads();
   addLeftThreads();
 }
 
+//copy constructor
 ThreadedBST::ThreadedBST(const ThreadedBST& other) {
   this->root = copyTree(other.root);
   this->n = other.n;
@@ -48,8 +77,50 @@ ThreadedBST::ThreadedBST(const ThreadedBST& other) {
   addLeftThreads();
 }
 
+Node *ThreadedBST::copyTree(Node *node) {
+  if (node != nullptr) {
+    Node *newNode = new Node(node->data);
+    if (!node->leftThread) {
+      newNode->left = copyTree(node->left);
+    }
+    if (!node->rightThread) {
+      newNode->right = copyTree(node->right);
+    }
+    return newNode;
+  }
+  return nullptr;
+}
+
+Node *ThreadedBST::balancedTree(int start, int end) {
+  if (end < start) {
+    return nullptr;
+  } else {
+    int midpoint = (start + end) / 2;
+    Node *root = new Node(midpoint);
+    root->left = balancedTree(start, midpoint - 1);
+    root->right = balancedTree(midpoint + 1, end);
+    return root;
+  }
+}
+
 ThreadedBST::~ThreadedBST() {
   clear(root);
+}
+
+int ThreadedBST::getHeight() const {
+  return this->height;
+}
+
+bool ThreadedBST::isEmpty() const {
+  if (this->root == nullptr) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+int ThreadedBST::getNumberOfNodes() const { 
+  return this->numberOfNodes;
 }
 
 Node* ThreadedBST::getEntry(int n) const {
@@ -72,29 +143,6 @@ Node* ThreadedBST::getEntryHelper(int n, Node* ptr) const {
 	}
 }
 
-bool ThreadedBST::remove(const int &target) {
-  Node *curr = root;
-  Node *prev = nullptr;
-  while (curr != nullptr &&
-         ((!curr->leftThread && curr->left != nullptr) ||
-          (!curr->rightThread && curr->right != nullptr)) &&
-         curr->data != target) { 
-    if (target < curr->data) {
-      prev = curr;
-      curr = curr->left;
-    } else {
-      prev = curr;
-      curr = curr->right;
-    }
-  }
-  if (curr == nullptr || curr->data != target) {
-    return false;
-  } else {
-    bool result = removeHelper(curr, prev);
-    return result;
-  }
-}
-
 void ThreadedBST::clear(Node* node) {
     if (node != nullptr) {
       if (!node->leftThread) {
@@ -107,22 +155,10 @@ void ThreadedBST::clear(Node* node) {
     }
 }
 
-Node *ThreadedBST::balancedTree(int min, int max) {
-  if (min > max) {
-    return nullptr;
-  } else {
-    int midpoint = (min + max) / 2;
-    Node *node = new Node(midpoint);
-    node->left = balancedTree(min, midpoint - 1);
-    node->right = balancedTree(midpoint + 1, max);
-    return node;
-  }
-}
-
 void ThreadedBST::addRightThreads() {
-  stack<Node *> nodeStack;
-  Node *curr = root;
-  Node *prev = root;
+  stack<Node*> nodeStack;
+  Node* curr = root;
+  Node* prev = root;
   if (root != nullptr) {
     nodeStack.push(curr);
   }
@@ -178,25 +214,27 @@ void ThreadedBST::addLeftThreads() {
   }
 }
 
-Node *ThreadedBST::copyTree(Node *node) {
-  if (node != nullptr) {
-    Node *newNode = new Node(node->data);
-    if (!node->leftThread) {
-      newNode->left = copyTree(node->left);
+bool ThreadedBST::remove(const int &target) {
+  Node *curr = root;
+  Node *prev = nullptr;
+  while (curr != nullptr &&
+         ((!curr->leftThread && curr->left != nullptr) ||
+          (!curr->rightThread && curr->right != nullptr)) &&
+         curr->data != target) { 
+    if (target < curr->data) {
+      prev = curr;
+      curr = curr->left;
+    } else {
+      prev = curr;
+      curr = curr->right;
     }
-    if (!node->rightThread) {
-      newNode->right = copyTree(node->right);
-    }
-    return newNode;
   }
-  return nullptr;
-}
-
-vector<int> ThreadedBST::preorderTraversal() const {
-	if (currentNode->right!= nullptr) {
-
-	}
-
+  if (curr == nullptr || curr->data != target) {
+    return false;
+  } else {
+    bool result = removeHelper(curr, prev);
+    return result;
+  }
 }
 
 bool ThreadedBST::removeHelper(Node *curr, Node *prev) {
