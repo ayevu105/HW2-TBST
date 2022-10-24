@@ -17,7 +17,17 @@ void test1() { // size 1
     cout << "New Tree: " << newTree << endl;
 }
 
+void test2() { // size 1
+    int n = 5;
+    ThreadedBST origTree(n); // creating a tree
+    ThreadedBST newTree = origTree; // copying original tree
+    // remove all evens from newTree
+    int totalNodes = newTree.getNumberOfNodes(newTree.getEntry(1));
+    //output
+    cout << totalNodes << endl;
+}
+
 int main() {
-    test1();
+    test2();
     return 0;
 }

@@ -71,20 +71,20 @@ ThreadedBST::ThreadedBST(int n) {
 
 //copy constructor
 ThreadedBST::ThreadedBST(const ThreadedBST& other) {
-  this->root = copyTree(other.root);
+  this->root = copyNode(other.root);
   this->n = other.n;
   addRightThreads();
   addLeftThreads();
 }
 
-Node *ThreadedBST::copyTree(Node *node) {
+Node *ThreadedBST::copyNode(Node *node) {
   if (node != nullptr) {
     Node *newNode = new Node(node->data);
     if (!node->leftThread) {
-      newNode->left = copyTree(node->left);
+      newNode->left = copyNode(node->left);
     }
     if (!node->rightThread) {
-      newNode->right = copyTree(node->right);
+      newNode->right = copyNode(node->right);
     }
     return newNode;
   }
@@ -119,8 +119,45 @@ bool ThreadedBST::isEmpty() const {
   }
 }
 
-int ThreadedBST::getNumberOfNodes() const { 
-  return this->numberOfNodes;
+int ThreadedBST::left_height(Node* node)
+{
+    int ht = 0;
+    while (node) {
+        ht++;
+        node = node->left;
+    }
+    // Return the left height obtained
+    return ht;
+}
+  
+// Function to get the right height
+// of the binary tree
+int ThreadedBST::right_height(Node* node)
+{
+    int ht = 0;
+    while (node) {
+        ht++;
+        node = node->right;
+    }
+    // Return the right height obtained
+    return ht;
+}
+
+int ThreadedBST::getNumberOfNodes(Node* root) { 
+      // Base Case
+    if (root == NULL)
+        return 0;
+    // Find the left height and the
+    // right heights
+    int lh = left_height(root);
+    int rh = right_height(root);
+    // If left and right heights are
+    // equal return 2^height(1<<height) -1
+    if (lh == rh)
+        return (1 << lh) - 1;
+    // Otherwise, recursive call
+    return 1 + getNumberOfNodes(root->left)
+           + getNumberOfNodes(root->right);
 }
 
 Node* ThreadedBST::getEntry(int n) const {

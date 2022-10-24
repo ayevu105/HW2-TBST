@@ -32,6 +32,8 @@ private:
   bool leftThread = false;
 
   bool rightThread = false;
+
+  bool isThread = false;
 };
 
 class ThreadedBST {
@@ -54,7 +56,7 @@ public:
 
   int getHeight() const;
 
-  int getNumberOfNodes() const;
+  int getNumberOfNodes(Node* node);
 
 private:
 
@@ -78,7 +80,7 @@ private:
 
   void addLeftThreads();
 
-  Node* copyTree(Node* node);
+  Node* copyNode(Node* node);
 
   bool removeHelper(Node* curr, Node* prev);
 
@@ -86,6 +88,9 @@ private:
 
   bool isEmpty() const;
 
+  int right_height (Node* node);
+
+  int left_height (Node* node);
 };
 
 #endif
