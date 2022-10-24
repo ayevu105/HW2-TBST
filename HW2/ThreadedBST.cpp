@@ -10,6 +10,14 @@ bst.preOrderTraversal(bst.root);
 return out << "\n";
 }
 
+ThreadedBST& ThreadedBST::operator=(const ThreadedBST& bst) {
+  if (this != &bst) {
+    clear(root);
+    copyNode(bst.root);
+  }
+  return *this;
+}
+
 void ThreadedBST::preOrderTraversal(Node* node) const {
   if(node == nullptr){
     return;
@@ -64,7 +72,7 @@ Node::Node(int data) : data{data} {
 //Constructor w parameter
 ThreadedBST::ThreadedBST(int n) {
   this->n = n;
-  root = balancedTree(1, n);
+  root = balanceTree(1, n);
   addRightThreads();
   addLeftThreads();
 }
@@ -91,14 +99,14 @@ Node *ThreadedBST::copyNode(Node *node) {
   return nullptr;
 }
 
-Node *ThreadedBST::balancedTree(int start, int end) {
+Node *ThreadedBST::balanceTree(int start, int end) {
   if (end < start) {
     return nullptr;
   } else {
     int midpoint = (start + end) / 2;
     Node *root = new Node(midpoint);
-    root->left = balancedTree(start, midpoint - 1);
-    root->right = balancedTree(midpoint + 1, end);
+    root->left = balanceTree(start, midpoint - 1);
+    root->right = balanceTree(midpoint + 1, end);
     return root;
   }
 }
@@ -108,7 +116,26 @@ ThreadedBST::~ThreadedBST() {
 }
 
 int ThreadedBST::getHeight() const {
-  return this->height;
+  if (root == nullptr) {
+    return 0;
+  }
+  else {
+    return (getHeightHelper(root));
+  }
+}
+
+int ThreadedBST::getHeightHelper(Node* node) const {
+  int left_height = 0;
+  int right_height = 0;
+  
+  if (node->leftThread) {
+    left_height = 1 + getHeightHelper(node->left);
+  }
+
+  if(node->rightThread) {
+    right_height = 1 + getHeightHelper(node->right);
+  }
+  return max(left_height, right_height);
 }
 
 bool ThreadedBST::isEmpty() const {
@@ -119,45 +146,8 @@ bool ThreadedBST::isEmpty() const {
   }
 }
 
-int ThreadedBST::left_height(Node* node)
-{
-    int ht = 0;
-    while (node) {
-        ht++;
-        node = node->left;
-    }
-    // Return the left height obtained
-    return ht;
-}
-  
-// Function to get the right height
-// of the binary tree
-int ThreadedBST::right_height(Node* node)
-{
-    int ht = 0;
-    while (node) {
-        ht++;
-        node = node->right;
-    }
-    // Return the right height obtained
-    return ht;
-}
-
-int ThreadedBST::getNumberOfNodes(Node* root) { 
-      // Base Case
-    if (root == NULL)
-        return 0;
-    // Find the left height and the
-    // right heights
-    int lh = left_height(root);
-    int rh = right_height(root);
-    // If left and right heights are
-    // equal return 2^height(1<<height) -1
-    if (lh == rh)
-        return (1 << lh) - 1;
-    // Otherwise, recursive call
-    return 1 + getNumberOfNodes(root->left)
-           + getNumberOfNodes(root->right);
+int ThreadedBST::getNumberOfNodes(int numberOfNodes) { 
+  return numberOfNodes;
 }
 
 Node* ThreadedBST::getEntry(int n) const {
@@ -334,6 +324,10 @@ bool ThreadedBST::removeHelper(Node *curr, Node *prev) {
     delete curr;
     return true;
   }
+}
+
+Node* ThreadedBST::getRoot() {
+  return root;
 }
 
 

@@ -19,7 +19,7 @@ class Node {
 
   friend ostream &operator<<(ostream &out, const ThreadedBST &bst);
 
-private:
+public:
 
   explicit Node(int data);
 
@@ -29,9 +29,9 @@ private:
 
   Node* right = nullptr;
 
-  bool leftThread = false;
+  bool leftThread;
 
-  bool rightThread = false;
+  bool rightThread;
 
   bool isThread = false;
 };
@@ -55,8 +55,17 @@ public:
   Node* getEntry(int n) const;
 
   int getHeight() const;
+  
+  int getHeightHelper(Node* node) const;
 
-  int getNumberOfNodes(Node* node);
+  int getNumberOfNodes(int numberOfNodes);
+
+  Node* getRoot();
+
+  bool isEmpty() const;
+
+  ThreadedBST& operator=(const ThreadedBST& bst);
+  
 
 private:
 
@@ -74,7 +83,7 @@ private:
 
   void postOrderTraversal(Node* node) const;
 
-  Node* balancedTree(int min, int max);
+  Node* balanceTree(int min, int max);
 
   void addRightThreads();
 
@@ -85,12 +94,6 @@ private:
   bool removeHelper(Node* curr, Node* prev);
 
   Node* getEntryHelper(int n, Node* ptr) const;
-
-  bool isEmpty() const;
-
-  int right_height (Node* node);
-
-  int left_height (Node* node);
 };
 
 #endif

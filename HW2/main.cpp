@@ -5,7 +5,7 @@
 using namespace std;
 
 void test1() { // size 1
-    int n = 10;
+    int n = 4;
     ThreadedBST origTree(n); // creating a tree
     ThreadedBST newTree = origTree; // copying original tree
     // remove all evens from newTree
@@ -18,16 +18,35 @@ void test1() { // size 1
 }
 
 void test2() { // size 1
-    int n = 5;
+    int n = 4;
     ThreadedBST origTree(n); // creating a tree
     ThreadedBST newTree = origTree; // copying original tree
-    // remove all evens from newTree
-    int totalNodes = newTree.getNumberOfNodes(newTree.getEntry(1));
-    //output
-    cout << totalNodes << endl;
+    // remove all evens from newTre
+    
+    Node* node = origTree.getEntry(2);
+    cout << node->data << endl;
+}
+
+void test3() { // size 1
+    int n = 4;
+    ThreadedBST origTree(n); // creating a tree
+    ThreadedBST newTree = origTree; // copying original tree
+    int count = newTree.getNumberOfNodes(n);
+    cout << count << endl;
+}
+
+void test4() { // size 1
+    int n = 10;
+    ThreadedBST origTree(n); // creating a tree
+    ThreadedBST newTree = origTree; // copying original tree
+    int height = newTree.getHeight();
+    cout << height << endl;
 }
 
 int main() {
+    test1();
     test2();
+    test3();
+    test4();
     return 0;
 }
