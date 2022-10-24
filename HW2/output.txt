@@ -1,0 +1,750 @@
+Sun Oct 23 19:58:07 PDT 2022
+Linux csslab1 4.18.0-372.26.1.el8_6.x86_64 #1 SMP Tue Sep 13 18:09:48 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+uid=1003642(ayevu105) gid=2121003642(ayevu105) groups=2121003642(ayevu105),605559(lab-access)
+=====================================================
+1. Compiles without warnings with -Wall -Wextra flags
+=====================================================
+/tmp/cc3FCSBi.o: In function `__gnu_cxx::new_allocator<Node*>::~new_allocator()':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:15: multiple definition of `operator<<(std::ostream&, ThreadedBST const&)'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:15: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::preOrderTraversal(Node*) const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:243: multiple definition of `ThreadedBST::preOrderTraversal(Node*) const'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:243: first defined here
+/tmp/cc3FCSBi.o: In function `void __gnu_cxx::new_allocator<Node*>::construct<Node*, Node* const&>(Node**, Node* const&)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:21: multiple definition of `ThreadedBST::operator=(ThreadedBST const&)'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:21: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::clear(Node*)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:228: multiple definition of `ThreadedBST::clear(Node*)'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:228: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::copyTree(Node*)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:61: multiple definition of `ThreadedBST::copyTree(Node*)'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:61: first defined here
+/tmp/cc3FCSBi.o: In function `Node::Node(int)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:30: multiple definition of `Node::Node(int)'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:30: first defined here
+/tmp/cc3FCSBi.o: In function `Node::Node(int)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:30: multiple definition of `Node::Node(int)'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:30: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::ThreadedBST(int)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:38: multiple definition of `ThreadedBST::ThreadedBST(int)'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:38: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::balanceTree(int, int)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:79: multiple definition of `ThreadedBST::balanceTree(int, int)'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:79: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::addRightThread()':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:149: multiple definition of `ThreadedBST::addRightThread()'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:149: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::addLeftThread()':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:176: multiple definition of `ThreadedBST::addLeftThread()'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:176: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::ThreadedBST(int)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:38: multiple definition of `ThreadedBST::ThreadedBST(int)'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:38: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::ThreadedBST(ThreadedBST const&)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:46: multiple definition of `ThreadedBST::ThreadedBST(ThreadedBST const&)'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:46: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::ThreadedBST(ThreadedBST const&)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:46: multiple definition of `ThreadedBST::ThreadedBST(ThreadedBST const&)'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:46: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::~ThreadedBST()':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:54: multiple definition of `ThreadedBST::~ThreadedBST()'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:54: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::~ThreadedBST()':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:54: multiple definition of `ThreadedBST::~ThreadedBST()'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:54: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::getHeight() const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:93: multiple definition of `ThreadedBST::getHeight() const'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:93: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::getHeightHelper(Node*) const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:105: multiple definition of `ThreadedBST::getHeightHelper(Node*) const'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:105: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::getEntry(int) const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:122: multiple definition of `ThreadedBST::getEntry(int) const'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:122: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::getEntryHelper(int, Node*) const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:131: multiple definition of `ThreadedBST::getEntryHelper(int, Node*) const'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:131: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::getNumberOfNodes(int)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:211: multiple definition of `ThreadedBST::getNumberOfNodes(int)'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:211: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::isEmpty() const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:217: multiple definition of `ThreadedBST::isEmpty() const'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:217: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::inOrderTraversal(Node*) const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:261: multiple definition of `ThreadedBST::inOrderTraversal(Node*) const'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:261: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::postOrderTraversal(Node*) const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:279: multiple definition of `ThreadedBST::postOrderTraversal(Node*) const'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:279: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::remove(int const&)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:297: multiple definition of `ThreadedBST::remove(int const&)'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:297: first defined here
+/tmp/cc3FCSBi.o: In function `ThreadedBST::removeHelper(Node*, Node*)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:324: multiple definition of `ThreadedBST::removeHelper(Node*, Node*)'
+/tmp/ccrBAVU0.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:324: first defined here
+collect2: error: ld returned 1 exit status
+=====================================================
+2. Runs and produces correct output
+=====================================================
+./create-output.sh: line 69: ./a.out: No such file or directory
+=====================================================
+3. clang-tidy warnings are fixed
+=====================================================
+5 warnings generated.
+7 warnings generated.
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:26:11: warning: Potential memory leak [clang-analyzer-cplusplus.NewDeleteLeaks]
+  return *this;
+          ^
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:21:1: note: Assuming bst != *this
+ThreadedBST& ThreadedBST::operator=(const ThreadedBST& bst) {
+^
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:22:7: note: Assuming the condition is true
+  if (this != &bst) {
+      ^~~~~~~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:22:3: note: Taking true branch
+  if (this != &bst) {
+  ^
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:24:5: note: Calling 'ThreadedBST::copyTree'
+    copyTree(bst.root);
+    ^~~~~~~~~~~~~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:62:7: note: Assuming the condition is true
+  if (node != nullptr) {
+      ^~~~~~~~~~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:62:3: note: Taking true branch
+  if (node != nullptr) {
+  ^
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:63:21: note: Memory is allocated
+    Node *newNode = new Node(node->value);
+                    ^~~~~~~~~~~~~~~~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:64:9: note: Assuming field 'leftThread' is true
+    if (!node->leftThread) {
+        ^~~~~~~~~~~~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:64:5: note: Taking false branch
+    if (!node->leftThread) {
+    ^
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:67:9: note: Assuming field 'rightThread' is true
+    if (!node->rightThread) {
+        ^~~~~~~~~~~~~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:67:5: note: Taking false branch
+    if (!node->rightThread) {
+    ^
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:24:5: note: Returned allocated memory
+    copyTree(bst.root);
+    ^~~~~~~~~~~~~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:26:11: note: Potential memory leak
+  return *this;
+          ^
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:42:3: warning: 1 uninitialized field at the end of the constructor call [clang-analyzer-optin.cplusplus.UninitializedObject]
+  addLeftThread();
+  ^
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.h:75:7: note: uninitialized field 'this->numberOfNodes'
+  int numberOfNodes;
+      ^~~~~~~~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/main.cpp:66:5: note: Calling 'test1'
+    test1();
+    ^~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/main.cpp:17:17: note: Calling constructor for 'ThreadedBST'
+    ThreadedBST origTree(n); // creating a tree
+                ^~~~~~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:42:3: note: 1 uninitialized field at the end of the constructor call
+  addLeftThread();
+  ^~~~~~~~~~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:50:3: warning: 1 uninitialized field at the end of the constructor call [clang-analyzer-optin.cplusplus.UninitializedObject]
+  addLeftThread();
+  ^
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.h:75:7: note: uninitialized field 'this->numberOfNodes'
+  int numberOfNodes;
+      ^~~~~~~~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/main.cpp:66:5: note: Calling 'test1'
+    test1();
+    ^~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/main.cpp:18:27: note: Calling copy constructor for 'ThreadedBST'
+    ThreadedBST newTree = origTree; // copying original tree
+                          ^~~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:50:3: note: 1 uninitialized field at the end of the constructor call
+  addLeftThread();
+  ^~~~~~~~~~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:327:17: warning: Access to field 'left' results in a dereference of a null pointer (loaded from variable 'prev') [clang-analyzer-core.NullDereference]
+    if (curr == prev->left) {
+                ^
+/home/NETID/ayevu105/HW2-TBST-3/HW2/main.cpp:58:5: note: Loop condition is true.  Entering loop body
+    for (int i = 2; i < n + 1; i += 2) {
+    ^
+/home/NETID/ayevu105/HW2-TBST-3/HW2/main.cpp:59:9: note: Calling 'ThreadedBST::remove'
+        newTree.remove(i);
+        ^~~~~~~~~~~~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:299:3: note: 'prev' initialized to a null pointer value
+  Node *prev = nullptr;
+  ^~~~~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:300:10: note: Assuming the condition is true
+  while (curr != nullptr && ((!curr->leftThread && curr->left != nullptr) ||
+         ^~~~~~~~~~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:300:10: note: Left side of '&&' is true
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:300:31: note: Assuming field 'leftThread' is true
+  while (curr != nullptr && ((!curr->leftThread && curr->left != nullptr) ||
+                              ^~~~~~~~~~~~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:300:49: note: Left side of '&&' is false
+  while (curr != nullptr && ((!curr->leftThread && curr->left != nullptr) ||
+                                                ^
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:301:10: note: Assuming field 'rightThread' is true
+        (!curr->rightThread && curr->right != nullptr)) &&
+         ^~~~~~~~~~~~~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:301:29: note: Left side of '&&' is false
+        (!curr->rightThread && curr->right != nullptr)) &&
+                            ^
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:312:7: note: Left side of '||' is false
+  if (curr == nullptr || curr->value != target) {
+      ^
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:312:26: note: Assuming 'target' is equal to field 'value'
+  if (curr == nullptr || curr->value != target) {
+                         ^~~~~~~~~~~~~~~~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:312:3: note: Taking false branch
+  if (curr == nullptr || curr->value != target) {
+  ^
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:315:38: note: Passing null pointer value via 2nd parameter 'prev'
+    bool result = removeHelper(curr, prev);
+                                     ^~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:315:19: note: Calling 'ThreadedBST::removeHelper'
+    bool result = removeHelper(curr, prev);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:325:14: note: Field 'leftThread' is true
+  if ((curr->leftThread || curr->left == nullptr) && (curr->rightThread || 
+             ^
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:325:25: note: Left side of '||' is true
+  if ((curr->leftThread || curr->left == nullptr) && (curr->rightThread || 
+                        ^
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:325:61: note: Field 'rightThread' is true
+  if ((curr->leftThread || curr->left == nullptr) && (curr->rightThread || 
+                                                            ^
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:325:73: note: Left side of '||' is true
+  if ((curr->leftThread || curr->left == nullptr) && (curr->rightThread || 
+                                                                        ^
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:327:17: note: Access to field 'left' results in a dereference of a null pointer (loaded from variable 'prev')
+    if (curr == prev->left) {
+                ^~~~
+=====================================================
+4. clang-format does not find any formatting issues
+=====================================================
+Running clang-format on ./main.cpp
+3,5c3,5
+<  * where the main driver uses multiple int values which represent the number of nodes
+<  * that will be in the tree. The program then will print out a list of nodes using a preorder
+<  * traversal.
+---
+>  * where the main driver uses multiple int values which represent the number of
+>  * nodes that will be in the tree. The program then will print out a list of
+>  * nodes using a preorder traversal.
+10d9
+< #include "ThreadedBST.h"
+11a11
+> #include "ThreadedBST.h"
+14,20c14,20
+< void test1() { 
+<     cout << "Testing = operator: " << endl;
+<     int n = 4;
+<     ThreadedBST origTree(n); // creating a tree
+<     ThreadedBST newTree = origTree; // copying original tree
+<     cout << "Original Tree: " << origTree;
+<     cout << "Copied Tree: " << newTree;
+---
+> void test1() {
+>   cout << "Testing = operator: " << endl;
+>   int n = 4;
+>   ThreadedBST origTree(n);        // creating a tree
+>   ThreadedBST newTree = origTree; // copying original tree
+>   cout << "Original Tree: " << origTree;
+>   cout << "Copied Tree: " << newTree;
+24,30c24,30
+<     cout << "Testing getEntry() implementation:" << endl;
+<     int n = 10;
+<     ThreadedBST origTree(n); // creating a tree
+<     ThreadedBST newTree = origTree; // copying original tree
+<     Node* node = newTree.getEntry(2);
+<     cout << "Copied Tree: " << newTree;
+<     cout << node->value << " exists in the TBST" << endl;
+---
+>   cout << "Testing getEntry() implementation:" << endl;
+>   int n = 10;
+>   ThreadedBST origTree(n);        // creating a tree
+>   ThreadedBST newTree = origTree; // copying original tree
+>   Node *node = newTree.getEntry(2);
+>   cout << "Copied Tree: " << newTree;
+>   cout << node->value << " exists in the TBST" << endl;
+34,40c34,40
+<     cout << "Testing getNumberOfNodes() implementation:" << endl;
+<     int n = 17;
+<     ThreadedBST origTree(n); // creating a tree
+<     ThreadedBST newTree = origTree; // copying original tree
+<     int count = newTree.getNumberOfNodes(n);
+<     cout << "Copied Tree: " << newTree;
+<     cout << "There are " << count << " nodes in this TBST" << endl;
+---
+>   cout << "Testing getNumberOfNodes() implementation:" << endl;
+>   int n = 17;
+>   ThreadedBST origTree(n);        // creating a tree
+>   ThreadedBST newTree = origTree; // copying original tree
+>   int count = newTree.getNumberOfNodes(n);
+>   cout << "Copied Tree: " << newTree;
+>   cout << "There are " << count << " nodes in this TBST" << endl;
+44,50c44,50
+<     cout << "Testing getHeight() implementation:" << endl;
+<     int n = 100;
+<     ThreadedBST origTree(n); // creating a tree
+<     ThreadedBST newTree = origTree; // copying original tree
+<     int height = newTree.getHeight();
+<     cout << newTree;
+<     cout << "Height of TBST is: " << height << endl;
+---
+>   cout << "Testing getHeight() implementation:" << endl;
+>   int n = 100;
+>   ThreadedBST origTree(n);        // creating a tree
+>   ThreadedBST newTree = origTree; // copying original tree
+>   int height = newTree.getHeight();
+>   cout << newTree;
+>   cout << "Height of TBST is: " << height << endl;
+54,62c54,62
+<     cout << "Testing remove() implementation:" << endl;
+<     int n = 11;
+<     ThreadedBST origTree(n); // creating a tree
+<     ThreadedBST newTree = origTree; // copying original tree
+<     for (int i = 2; i < n + 1; i += 2) {
+<         newTree.remove(i);
+<     }
+<     cout << "Original Tree: " << origTree;
+<     cout << "Copied Tree with even numbers removed: " << newTree;
+---
+>   cout << "Testing remove() implementation:" << endl;
+>   int n = 11;
+>   ThreadedBST origTree(n);        // creating a tree
+>   ThreadedBST newTree = origTree; // copying original tree
+>   for (int i = 2; i < n + 1; i += 2) {
+>     newTree.remove(i);
+>   }
+>   cout << "Original Tree: " << origTree;
+>   cout << "Copied Tree with even numbers removed: " << newTree;
+66,75c66,75
+<     test1();
+<     cout << endl;
+<     test2();
+<     cout << endl;
+<     test3();
+<     cout << endl;
+<     test4();
+<     cout << endl;
+<     test5();
+<     return 0;
+---
+>   test1();
+>   cout << endl;
+>   test2();
+>   cout << endl;
+>   test3();
+>   cout << endl;
+>   test4();
+>   cout << endl;
+>   test5();
+>   return 0;
+Running clang-format on ./ThreadedBST.cpp
+2,3c2,3
+<  * @brief The following code gives the implementations of the following functions that
+<  * were listed in the TBST assignment. 
+---
+>  * @brief The following code gives the implementations of the following
+>  * functions that were listed in the TBST assignment.
+7a8
+> #include "ThreadedBST.h"
+10d10
+< #include "ThreadedBST.h"
+14,15c14,15
+< //output overloading
+< ostream &operator<<(ostream& out, const ThreadedBST& bst) {
+---
+> // output overloading
+> ostream &operator<<(ostream &out, const ThreadedBST &bst) {
+20,21c20,21
+< //assignment overloading for copying
+< ThreadedBST& ThreadedBST::operator=(const ThreadedBST& bst) {
+---
+> // assignment overloading for copying
+> ThreadedBST &ThreadedBST::operator=(const ThreadedBST &bst) {
+29c29
+< //constructs a new tree node with a given int
+---
+> // constructs a new tree node with a given int
+37c37
+< //constructs a new tree with a given int
+---
+> // constructs a new tree with a given int
+45,46c45,46
+< //constructs a new tree from another tree by copying its contents 
+< ThreadedBST::ThreadedBST(const ThreadedBST& other) {
+---
+> // constructs a new tree from another tree by copying its contents
+> ThreadedBST::ThreadedBST(const ThreadedBST &other) {
+54,56c54
+< ThreadedBST::~ThreadedBST() {
+<   clear(root);
+< }
+---
+> ThreadedBST::~ThreadedBST() { clear(root); }
+61c59
+< Node* ThreadedBST::copyTree(Node* node) {
+---
+> Node *ThreadedBST::copyTree(Node *node) {
+75c73
+< /* balanceTree creates a balanced tree 
+---
+> /* balanceTree creates a balanced tree
+77c75
+<  * @param end is the end range of ints that the balance tree ends at 
+---
+>  * @param end is the end range of ints that the balance tree ends at
+79c77
+< Node* ThreadedBST::balanceTree(int start, int end) {
+---
+> Node *ThreadedBST::balanceTree(int start, int end) {
+96,97c94
+<   }
+<   else {
+---
+>   } else {
+105c102
+< int ThreadedBST::getHeightHelper(Node* root) const {
+---
+> int ThreadedBST::getHeightHelper(Node *root) const {
+113c110
+<   if(root->rightThread) {
+---
+>   if (root->rightThread) {
+122,123c119,120
+< Node* ThreadedBST::getEntry(int target) const {
+< 	return getEntryHelper(target, root);
+---
+> Node *ThreadedBST::getEntry(int target) const {
+>   return getEntryHelper(target, root);
+126,127c123,124
+< 
+< /* getEntryHelper is the helper function that searches for a node with a specified value
+---
+> /* getEntryHelper is the helper function that searches for a node with a
+>  * specified value
+131,144c128,141
+< Node* ThreadedBST::getEntryHelper(int n, Node* node) const {
+< 	if (node != nullptr) {
+< 		if (node->value == n) {
+< 			return node;
+< 		} else {
+< 			if (n < node->value) {
+< 				return getEntryHelper(n, node->left);
+< 			} else {
+< 				return getEntryHelper(n, node->right);
+< 			}
+< 		}
+< 	} else {
+< 		return nullptr;
+< 	}
+---
+> Node *ThreadedBST::getEntryHelper(int n, Node *node) const {
+>   if (node != nullptr) {
+>     if (node->value == n) {
+>       return node;
+>     } else {
+>       if (n < node->value) {
+>         return getEntryHelper(n, node->left);
+>       } else {
+>         return getEntryHelper(n, node->right);
+>       }
+>     }
+>   } else {
+>     return nullptr;
+>   }
+150,152c147,149
+<   stack<Node*> stack;
+<   Node* curr = root;
+<   Node* prev = root;
+---
+>   stack<Node *> stack;
+>   Node *curr = root;
+>   Node *prev = root;
+177,179c174,176
+<   stack<Node* > stack;
+<   Node* curr = root;
+<   Node* prev = root;
+---
+>   stack<Node *> stack;
+>   Node *curr = root;
+>   Node *prev = root;
+193c190,191
+<     while (curr == nullptr || (curr->left == nullptr && prev->value <= curr->value && !stack.empty())) {
+---
+>     while (curr == nullptr || (curr->left == nullptr &&
+>                                prev->value <= curr->value && !stack.empty())) {
+211,213c209
+< int ThreadedBST::getNumberOfNodes(int numberOfNodes) { 
+<   return numberOfNodes;
+< }
+---
+> int ThreadedBST::getNumberOfNodes(int numberOfNodes) { return numberOfNodes; }
+228c224
+< void ThreadedBST::clear(Node* node) {
+---
+> void ThreadedBST::clear(Node *node) {
+243,244c239,240
+< void ThreadedBST::preOrderTraversal(Node* node) const {
+<   if (node == nullptr){
+---
+> void ThreadedBST::preOrderTraversal(Node *node) const {
+>   if (node == nullptr) {
+250c246
+<   if(!node->leftThread) {
+---
+>   if (!node->leftThread) {
+253c249
+<   if(!node->rightThread) {
+---
+>   if (!node->rightThread) {
+261,262c257,258
+< void ThreadedBST::inOrderTraversal(Node* node) const {
+<   if (node == nullptr){
+---
+> void ThreadedBST::inOrderTraversal(Node *node) const {
+>   if (node == nullptr) {
+271c267
+<   if(!node->rightThread) {
+---
+>   if (!node->rightThread) {
+279,280c275,276
+< void ThreadedBST::postOrderTraversal(Node* node) const {
+<   if (node == nullptr){
+---
+> void ThreadedBST::postOrderTraversal(Node *node) const {
+>   if (node == nullptr) {
+284c280
+<   if(!node->leftThread) {
+---
+>   if (!node->leftThread) {
+287,288c283,284
+<   if(!node->rightThread) {
+<    postOrderTraversal(node->right);
+---
+>   if (!node->rightThread) {
+>     postOrderTraversal(node->right);
+297c293
+< bool ThreadedBST::remove(const int& target) {
+---
+> bool ThreadedBST::remove(const int &target) {
+300,302c296,299
+<   while (curr != nullptr && ((!curr->leftThread && curr->left != nullptr) ||
+<         (!curr->rightThread && curr->right != nullptr)) &&
+<          curr->value != target) { 
+---
+>   while (curr != nullptr &&
+>          ((!curr->leftThread && curr->left != nullptr) ||
+>           (!curr->rightThread && curr->right != nullptr)) &&
+>          curr->value != target) {
+324,326c321,323
+< bool ThreadedBST::removeHelper(Node* curr, Node* prev) {
+<   if ((curr->leftThread || curr->left == nullptr) && (curr->rightThread || 
+<        curr->right == nullptr)) { 
+---
+> bool ThreadedBST::removeHelper(Node *curr, Node *prev) {
+>   if ((curr->leftThread || curr->left == nullptr) &&
+>       (curr->rightThread || curr->right == nullptr)) {
+340c337,338
+<   } else if (!curr->leftThread && !curr->rightThread && curr->left != nullptr && curr->right != nullptr) { 
+---
+>   } else if (!curr->leftThread && !curr->rightThread && curr->left != nullptr &&
+>              curr->right != nullptr) {
+343c341
+<     while (!next->leftThread) { 
+---
+>     while (!next->leftThread) {
+349c347
+<   } else { 
+---
+>   } else {
+356c354
+<     if (prev == nullptr) { 
+---
+>     if (prev == nullptr) {
+363c361
+<     prev = curr->left; 
+---
+>     prev = curr->left;
+384d381
+< 
+=====================================================
+5. No memory leaks using g++
+=====================================================
+/tmp/ccu3plk3.o: In function `__gnu_cxx::new_allocator<Node*>::~new_allocator()':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:15: multiple definition of `operator<<(std::ostream&, ThreadedBST const&)'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:15: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::preOrderTraversal(Node*) const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:243: multiple definition of `ThreadedBST::preOrderTraversal(Node*) const'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:243: first defined here
+/tmp/ccu3plk3.o: In function `Node*** std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<Node**>(Node** const*, Node** const*, Node***)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:21: multiple definition of `ThreadedBST::operator=(ThreadedBST const&)'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:21: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::clear(Node*)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:228: multiple definition of `ThreadedBST::clear(Node*)'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:228: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::copyTree(Node*)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:61: multiple definition of `ThreadedBST::copyTree(Node*)'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:61: first defined here
+/tmp/ccu3plk3.o: In function `std::deque<Node*, std::allocator<Node*> >::_M_pop_back_aux()':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:30: multiple definition of `Node::Node(int)'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:30: first defined here
+/tmp/ccu3plk3.o: In function `std::deque<Node*, std::allocator<Node*> >::_M_pop_back_aux()':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:30: multiple definition of `Node::Node(int)'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:30: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::ThreadedBST(int)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:38: multiple definition of `ThreadedBST::ThreadedBST(int)'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:38: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::balanceTree(int, int)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:79: multiple definition of `ThreadedBST::balanceTree(int, int)'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:79: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::addRightThread()':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:149: multiple definition of `ThreadedBST::addRightThread()'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:149: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::addLeftThread()':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:176: multiple definition of `ThreadedBST::addLeftThread()'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:176: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::ThreadedBST(int)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:38: multiple definition of `ThreadedBST::ThreadedBST(int)'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:38: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::ThreadedBST(ThreadedBST const&)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:46: multiple definition of `ThreadedBST::ThreadedBST(ThreadedBST const&)'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:46: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::ThreadedBST(ThreadedBST const&)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:46: multiple definition of `ThreadedBST::ThreadedBST(ThreadedBST const&)'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:46: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::~ThreadedBST()':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:54: multiple definition of `ThreadedBST::~ThreadedBST()'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:54: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::~ThreadedBST()':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:54: multiple definition of `ThreadedBST::~ThreadedBST()'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:54: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::getHeight() const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:93: multiple definition of `ThreadedBST::getHeight() const'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:93: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::getHeightHelper(Node*) const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:105: multiple definition of `ThreadedBST::getHeightHelper(Node*) const'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:105: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::getEntry(int) const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:122: multiple definition of `ThreadedBST::getEntry(int) const'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:122: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::getEntryHelper(int, Node*) const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:131: multiple definition of `ThreadedBST::getEntryHelper(int, Node*) const'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:131: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::getNumberOfNodes(int)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:211: multiple definition of `ThreadedBST::getNumberOfNodes(int)'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:211: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::isEmpty() const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:217: multiple definition of `ThreadedBST::isEmpty() const'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:217: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::inOrderTraversal(Node*) const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:261: multiple definition of `ThreadedBST::inOrderTraversal(Node*) const'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:261: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::postOrderTraversal(Node*) const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:279: multiple definition of `ThreadedBST::postOrderTraversal(Node*) const'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:279: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::remove(int const&)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:297: multiple definition of `ThreadedBST::remove(int const&)'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:297: first defined here
+/tmp/ccu3plk3.o: In function `ThreadedBST::removeHelper(Node*, Node*)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:324: multiple definition of `ThreadedBST::removeHelper(Node*, Node*)'
+/tmp/cc33LXbF.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:324: first defined here
+collect2: error: ld returned 1 exit status
+=====================================================
+6. No memory leaks using valgrind, look for "definitely lost" 
+=====================================================
+/tmp/ccobd4c6.o: In function `__gnu_cxx::new_allocator<Node*>::~new_allocator()':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:15: multiple definition of `operator<<(std::ostream&, ThreadedBST const&)'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:15: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::preOrderTraversal(Node*) const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:243: multiple definition of `ThreadedBST::preOrderTraversal(Node*) const'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:243: first defined here
+/tmp/ccobd4c6.o: In function `void __gnu_cxx::new_allocator<Node*>::construct<Node*, Node* const&>(Node**, Node* const&)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:21: multiple definition of `ThreadedBST::operator=(ThreadedBST const&)'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:21: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::clear(Node*)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:228: multiple definition of `ThreadedBST::clear(Node*)'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:228: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::copyTree(Node*)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:61: multiple definition of `ThreadedBST::copyTree(Node*)'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:61: first defined here
+/tmp/ccobd4c6.o: In function `Node::Node(int)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:30: multiple definition of `Node::Node(int)'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:30: first defined here
+/tmp/ccobd4c6.o: In function `Node::Node(int)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:30: multiple definition of `Node::Node(int)'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:30: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::ThreadedBST(int)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:38: multiple definition of `ThreadedBST::ThreadedBST(int)'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:38: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::balanceTree(int, int)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:79: multiple definition of `ThreadedBST::balanceTree(int, int)'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:79: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::addRightThread()':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:149: multiple definition of `ThreadedBST::addRightThread()'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:149: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::addLeftThread()':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:176: multiple definition of `ThreadedBST::addLeftThread()'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:176: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::ThreadedBST(int)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:38: multiple definition of `ThreadedBST::ThreadedBST(int)'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:38: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::ThreadedBST(ThreadedBST const&)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:46: multiple definition of `ThreadedBST::ThreadedBST(ThreadedBST const&)'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:46: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::ThreadedBST(ThreadedBST const&)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:46: multiple definition of `ThreadedBST::ThreadedBST(ThreadedBST const&)'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:46: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::~ThreadedBST()':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:54: multiple definition of `ThreadedBST::~ThreadedBST()'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:54: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::~ThreadedBST()':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:54: multiple definition of `ThreadedBST::~ThreadedBST()'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:54: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::getHeight() const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:93: multiple definition of `ThreadedBST::getHeight() const'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:93: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::getHeightHelper(Node*) const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:105: multiple definition of `ThreadedBST::getHeightHelper(Node*) const'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:105: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::getEntry(int) const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:122: multiple definition of `ThreadedBST::getEntry(int) const'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:122: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::getEntryHelper(int, Node*) const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:131: multiple definition of `ThreadedBST::getEntryHelper(int, Node*) const'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:131: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::getNumberOfNodes(int)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:211: multiple definition of `ThreadedBST::getNumberOfNodes(int)'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:211: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::isEmpty() const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:217: multiple definition of `ThreadedBST::isEmpty() const'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:217: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::inOrderTraversal(Node*) const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:261: multiple definition of `ThreadedBST::inOrderTraversal(Node*) const'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:261: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::postOrderTraversal(Node*) const':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:279: multiple definition of `ThreadedBST::postOrderTraversal(Node*) const'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:279: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::remove(int const&)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:297: multiple definition of `ThreadedBST::remove(int const&)'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:297: first defined here
+/tmp/ccobd4c6.o: In function `ThreadedBST::removeHelper(Node*, Node*)':
+/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:324: multiple definition of `ThreadedBST::removeHelper(Node*, Node*)'
+/tmp/ccJGnycc.o:/home/NETID/ayevu105/HW2-TBST-3/HW2/ThreadedBST.cpp:324: first defined here
+collect2: error: ld returned 1 exit status
+cat: valgrind-output.txt: No such file or directory
+=====================================================
+7. Tests have full code coverage
+=====================================================
+./create-output.sh: line 129: ./check-code-coverage.sh: Permission denied
+Sun Oct 23 19:58:46 PDT 2022
+=====================================================
+To create an output.txt file with all the output from this script
+Run the below command
+      ./create-output.sh > output.txt 2>&1 
+=====================================================

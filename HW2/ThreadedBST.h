@@ -1,7 +1,9 @@
-// Kristen Maggs and Amanda Todakonzie
-// This is Tree.h. It can dynamically create and destroy a balanced
-// threaded binary search tree of ints, print the tree, copy the tree into
-// another tree, remove all evens as well as individual nodes, and clear it.
+/* @file ThreadedBST.h
+ * @brief The following code gives the declarations of the following functions that
+ * were listed in the TBST assignment. 
+ * @author Anthony Vu
+ * @date 10/23/2022
+ */
 
 #ifndef THREADEDBST_H
 #define THREADEDBST_H
@@ -11,89 +13,78 @@
 
 using namespace std;
 
-class ThreadedBST;
-
 class Node {
 
   friend class ThreadedBST;
 
-  friend ostream &operator<<(ostream &out, const ThreadedBST &bst);
-
 public:
 
-  explicit Node(int data);
+  int value;
 
-  int data;
+  Node* left;
 
-  Node* left = nullptr;
-
-  Node* right = nullptr;
+  Node* right;
 
   bool leftThread;
 
   bool rightThread;
 
-  bool isThread = false;
+  explicit Node(int value);
 };
 
 class ThreadedBST {
 
-  friend ostream &operator<<(ostream &out, const ThreadedBST &bst);
+  friend ostream &operator<<(ostream& out, const ThreadedBST& bst);
 
 public:
 
-  explicit ThreadedBST(int n);
+  ThreadedBST& operator=(const ThreadedBST& bst);
 
-  virtual ~ThreadedBST();
+  ThreadedBST(int n);
 
   ThreadedBST(const ThreadedBST& other);
 
-  bool remove(const int &target);
+  ~ThreadedBST();
 
-  void clear(Node* node);
+  Node* copyTree(Node* node);
 
-  Node* getEntry(int n) const;
+  Node* balanceTree(int min, int max);
 
   int getHeight() const;
   
   int getHeightHelper(Node* node) const;
 
+  Node* getEntry(int n) const;
+
+  Node* getEntryHelper(int n, Node* ptr) const;
+
   int getNumberOfNodes(int numberOfNodes);
 
-  Node* getRoot();
+  void clear(Node* node);
 
-  bool isEmpty() const;
+  bool remove(const int &target);
 
-  ThreadedBST& operator=(const ThreadedBST& bst);
-  
+  bool removeHelper(Node* curr, Node* prev);
 
 private:
 
-  Node* root;
+  Node* root = nullptr;
 
   int n;
 
-  int height{0};
-
   int numberOfNodes;
+
+  bool isEmpty() const; 
+
+  void addRightThread();
+
+  void addLeftThread();
 
   void preOrderTraversal(Node* node) const;
 
   void inOrderTraversal(Node* node) const;
 
   void postOrderTraversal(Node* node) const;
-
-  Node* balanceTree(int min, int max);
-
-  void addRightThreads();
-
-  void addLeftThreads();
-
-  Node* copyNode(Node* node);
-
-  bool removeHelper(Node* curr, Node* prev);
-
-  Node* getEntryHelper(int n, Node* ptr) const;
 };
 
 #endif
